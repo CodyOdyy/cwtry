@@ -17,7 +17,7 @@ steps:
     args:
     - '-c'
     - |
-      sed "s|VAR_IMAGE|gcr.io/${_PROJECT_ID}/my-image:$SHORT_SHA|g"  customer-service/kubernetes-test.yaml > kubernetes.yaml
+      sed "s|VAR_IMAGE|gcr.io/${_PROJECT_ID}/my-image:$SHORT_SHA|g"  Kubernetes-Artifacts/Dev/kubernetes-test.yaml > kubernetes.yaml
 
   - name: 'gcr.io/cloud-builders/kubectl'
     args: ['apply', '-f', 'kubernetes.yaml']
